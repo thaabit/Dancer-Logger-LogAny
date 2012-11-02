@@ -1,0 +1,76 @@
+package Dancer::Logger::LogAny;
+{
+  $Dancer::Logger::LogAny::VERSION = '0.001';
+}
+# ABSTRACT: Use Log::Any to control logging from your Dancer app
+
+use strict;
+use warnings;
+use Dancer::Config 'setting';
+use Log::Any;
+use parent qw{Dancer::Logger::Abstract};
+
+my $_logger;
+
+
+sub init {
+    my ($self) = @_;
+    my $settings = setting ('LogAny') || {};
+    my $category = $settings->{category} || '';
+    $_logger = Log::Any->get_logger (category => $category);
+}
+
+sub _log {
+    my ($self, $level, $message) = @_;
+    $level = 'info' if $level eq 'core';
+    $_logger->$level ($message);
+}
+
+1;
+
+__END__
+=pod
+
+=head1 NAME
+
+Dancer::Logger::LogAny - Use Log::Any to control logging from your Dancer app
+
+=head1 VERSION
+
+version 0.001
+
+=head1 DESCRIPTION
+
+This module implements a logger engine that send log messages through
+C<Log::Any>.
+
+=head1 CONFIGURATION
+
+The setting B<logger> should be set to C<LogAny> in order to use this
+logger engine in a Dancer application.
+
+=head1 METHODS
+
+=head2 init()
+
+The init method is called by Dancer when creating the logger engine
+with this class. It will initiate a Log::Any logger using the possibly
+supplied category.
+
+=head1 DEPENDENCY
+
+This module depends on L<Log::Any>.
+
+=head1 AUTHOR
+
+Michael Alan Dorman <mdorman@ironicdesign.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 by Michael Alan Dorman.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
