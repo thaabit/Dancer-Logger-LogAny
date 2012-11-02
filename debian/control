@@ -1,0 +1,18 @@
+Source: dancer-logger-logany
+Section: perl
+Priority: optional
+Maintainer: Michael Alan Dorman <mdorman@ironicdesign.com>
+Build-Depends: debhelper (>= 8)
+Build-Depends-Indep: libdancer-perl,
+ liblog-any-perl
+Standards-Version: 3.9.3
+Homepage: http://search.cpan.org/dist/Dancer-Logger-LogAny/
+
+Package: libdancer-logger-logany-perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends},
+ libdancer-perl,
+ liblog-any-perl
+Description: Use Log::Any to control logging from your Dancer app
+ Dancer::Logger::LogAny implements a logger engine that send log messages
+ through Log::Any.
