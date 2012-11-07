@@ -36,6 +36,10 @@ This module depends on L<Log::Any>.
 sub init {
     my ($self) = @_;
     my $settings = setting ('LogAny') || {};
+    if ($settings->{logger}) {
+        require Log::Any::Adapter;
+        Log::Any::Adapter->set (@{$settings->{logger}});
+    }
     my $category = $settings->{category} || '';
     $_logger = Log::Any->get_logger (category => $category);
 }
