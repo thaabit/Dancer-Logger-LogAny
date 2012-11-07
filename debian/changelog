@@ -1,3 +1,10 @@
+dancer-logger-logany (0.002-1) unstable; urgency=low
+
+  * New release
+  * Update some dependencies.
+
+ -- Michael Alan Dorman <mdorman@ironicdesign.com>  Wed, 07 Nov 2012 08:26:01 -0500
+
 dancer-logger-logany (0.001-1) unstable; urgency=low
 
   * Initial Release.
