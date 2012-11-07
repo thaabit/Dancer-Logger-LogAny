@@ -20,7 +20,8 @@ requires:
   Dancer::Config: 0
   Dancer::Logger::Abstract: 0
   Log::Any: 0
+  Log::Any::Adapter: 0
   parent: 0
   strict: 0
   warnings: 0
-version: 0.001
+version: 0.002

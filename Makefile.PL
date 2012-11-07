@@ -28,11 +28,12 @@ my %WriteMakefileArgs = (
     "Dancer::Config" => 0,
     "Dancer::Logger::Abstract" => 0,
     "Log::Any" => 0,
+    "Log::Any::Adapter" => 0,
     "parent" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.001",
+  "VERSION" => "0.002",
   "test" => {
     "TESTS" => "t/*.t"
   }
