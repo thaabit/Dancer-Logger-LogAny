@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution Dancer-Logger-LogAny,
-version 0.001:
+version 0.002:
 
   Use Log::Any to control logging from your Dancer app
 
