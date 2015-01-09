@@ -66,8 +66,10 @@ sub init {
         require Log::Any::Adapter;
         Log::Any::Adapter->set (@{$settings->{logger}});
     }
-    my $category = $settings->{category} || '';
-    $_logger = Log::Any->get_logger (category => $category);
+    my %param = exists $settings->{category}
+        ? (category => $settings->{category})
+        : ();
+    $_logger = Log::Any->get_logger (%param);
 }
 
 sub _log {
