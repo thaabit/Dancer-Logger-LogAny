@@ -1,0 +1,9 @@
+Revision history for Dancer::Logger::LogAny
+
+0.03 Jan 09 2015
+- Fix tests with Log::Any version 0.90 and above 
+
+0.02 Nov 07 2012
+
+0.01 Nov 02 2012
+- Initial release.
